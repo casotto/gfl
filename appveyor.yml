@@ -37,6 +37,7 @@ install:
   - msbuild /m GSL.sln
   - dir
   - echo rrrrrrrrrrrr
+  - echo eeee
   - cd ..
   - cd gfl
 
