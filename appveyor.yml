@@ -30,13 +30,13 @@ install:
   - rmdir C:\\cygwin /s /q
 
   # Install the gls (Gnu Standard Library for windows)
-  - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
-  - cd ..
-  - cd gsl
+  - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gfl
+  #- cd ..
+  #- cd gsl
   - cmake .
   - msbuild /m GSL.sln
-  - cd ..
-  - cd gfl
+  #- cd ..
+  #- cd gfl
 
   # Install the build and runtime dependencies of the project.
   - conda install --quiet --yes numpy scipy cython networkx wheel conda-build"
