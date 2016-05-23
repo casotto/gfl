@@ -36,6 +36,7 @@ install:
   - cmake .
   - msbuild /m GSL.sln
   - dir
+  - echo rrrrrrrrrrrr
   - cd ..
   - cd gfl
 
