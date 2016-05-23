@@ -31,9 +31,12 @@ install:
 
   # Install the gls (Gnu Standard Library for windows)
   - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
+  - cd ..
+  - cd gfl
   - cmake .
   - msbuild /m GSL.s
-
+  - cd ..
+  - cd gsl
 
   # Install the build and runtime dependencies of the project.
   - conda install --quiet --yes numpy scipy cython nose wheel conda-build"
