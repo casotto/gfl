@@ -29,15 +29,12 @@ install:
   # see http://help.appveyor.com/discussions/problems/3712-git-remote-https-seems-to-be-broken
   - rmdir C:\\cygwin /s /q
 
-  # Install the gls (Gnu Standard Library for windows)
+  # Install the gls (Gnu Standard Library for windows) in a new folder
   - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
   - cd ..
   - cd gsl
   - cmake .
   - msbuild /m GSL.sln
-  - dir
-  - echo rrrrrrrrrrrr
-  - echo eeee
   - cd ..
   - cd gfl
 

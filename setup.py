@@ -18,9 +18,15 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 # C library for the GFL solver
+# I want to include the path of the gsl library installed before
+# but the compiler is still not able to link
+# the double declaration is to figure out if it is better \ or / in win environment
 module1 = Extension('libgraphfl',
-                    include_dirs = ['include','cpp/include/','C:\\projects\\gsl\\include'],
+                    include_dirs = ['"cpp/include/"','"C:\\projects"','"C:\\projects\\gsl\\"',
+                                    '"C:/projects"','"C:/projects/gsl/"'],
                     sources = ['cpp/src/graph_fl.c', 'cpp/src/tf_dp.c'])
+
+
 
 setup(
     name='pygfl',
