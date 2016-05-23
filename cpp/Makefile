@@ -1,4 +1,4 @@
-CC=gcc
+CC=c++
 NVCC=nvcc
 CFLAGS=-O3 -Wall -Wextra -ansi -std=c99 -pedantic -I"C:\projects\gsl\include" -L"C:\projects\gsl\lib" -lgslcblas -lgsl -lm
 OBJ=obj/*.o
