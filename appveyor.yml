@@ -30,13 +30,14 @@ install:
   - rmdir C:\\cygwin /s /q
 
   # Install the gls (Gnu Standard Library for windows)
-  - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gfl
-  #- cd ..
-  #- cd gsl
+  - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
+  - cd ..
+  - cd gsl
   - cmake .
   - msbuild /m GSL.sln
-  #- cd ..
-  #- cd gfl
+  - dir
+  - cd ..
+  - cd gfl
 
   # Install the build and runtime dependencies of the project.
   - conda install --quiet --yes numpy scipy cython networkx wheel conda-build"
@@ -71,3 +72,11 @@ test_script:
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
   - path: dist\*
+
+
+cache:
+  # Use the appveyor cache to avoid re-downloading large archives such
+  # the MKL numpy and scipy wheels mirrored on a rackspace cloud
+  # container, speed up the appveyor jobs and reduce bandwidth
+  # usage on our rackspace account.
+  - '%APPDATA%\pip\Cache'
