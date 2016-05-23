@@ -34,7 +34,7 @@ install:
   - cd ..
   - cd gsl
   - cmake .
-  - msbuild /m GSL.s
+  - msbuild /m GSL.sln
   - cd ..
   - cd gfl
 
