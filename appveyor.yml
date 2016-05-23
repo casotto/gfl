@@ -16,7 +16,8 @@ environment:
 
 install:
   # Miniconda is pre-installed in the worker build
-  - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%"
+  - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
   - "python -m pip install -U pip"
 
   # Check that we have the expected version and architecture for Python
@@ -31,7 +32,7 @@ install:
   # Install the gls (Gnu Standard Library for windows)
   - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
   - cmake .
-  - msbuild /m GSL.sln
+  - msbuild /m GSL.s
 
 
   # Install the build and runtime dependencies of the project.
