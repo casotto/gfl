@@ -22,7 +22,7 @@ from ctypes import *
 from utils import *
 
 '''Load the bayesian GFL library'''
-gflbayes_lib = cdll.LoadLibrary('libgraphfl.so')
+gflbayes_lib = windll.LoadLibrary('libgraphfl')
 gflbayes_gaussian_laplace = gflbayes_lib.bayes_gfl_gaussian_laplace
 gflbayes_gaussian_laplace.restype = None
 gflbayes_gaussian_laplace.argtypes = [c_int, ndpointer(c_double, flags='C_CONTIGUOUS'), ndpointer(c_double, flags='C_CONTIGUOUS'),

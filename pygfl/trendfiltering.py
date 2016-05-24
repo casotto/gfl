@@ -24,7 +24,7 @@ from ctypes import *
 from utils import *
 
 '''Load the graph trend filtering library'''
-graphfl_lib = cdll.LoadLibrary('libgraphfl.so')
+graphfl_lib = windll.LoadLibrary('libgraphfl')
 weighted_graphtf = graphfl_lib.graph_trend_filtering_weight_warm
 weighted_graphtf.restype = c_int
 weighted_graphtf.argtypes = [c_int, ndpointer(c_double, flags='C_CONTIGUOUS'), ndpointer(c_double, flags='C_CONTIGUOUS'), c_double,

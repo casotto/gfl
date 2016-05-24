@@ -44,7 +44,7 @@ class GraphFusedDensity:
         self.bins_allowed = bins_allowed
 
         # Load the graph fused lasso library
-        self.graphfl_lib = cdll.LoadLibrary('libgraphfl.so')
+        self.graphfl_lib = windll.LoadLibrary('libgraphfl')
         self.graphfl = self.graphfl_lib.graph_fused_lasso_logit_warm
         self.graphfl.restype = c_int
         self.graphfl.argtypes = [c_int, ndpointer(c_int, flags='C_CONTIGUOUS'), ndpointer(c_int, flags='C_CONTIGUOUS'),
