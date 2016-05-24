@@ -22,8 +22,8 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 # but the compiler is still not able to link
 # the double declaration is to figure out if it is better \ or / in win environment
 module1 = Extension('libgraphfl',
-                    include_dirs = ['"cpp/include/"','"C:\\projects"','"C:\\projects\\gsl\\"',
-                                    '"C:/projects"','"C:/projects/gsl/"'],
+                    include_dirs = ['("cpp/include/")','("C:\\projects")','("C:\\projects\\gsl\\")',
+                                    '("C:/projects")','("C:/projects/gsl/)")'],
                     sources = ['cpp/src/graph_fl.c', 'cpp/src/tf_dp.c'])
 
 
