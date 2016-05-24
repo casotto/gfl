@@ -30,6 +30,7 @@ install:
   - rmdir C:\\cygwin /s /q
 
   # Install the gls (Gnu Standard Library for windows) in a new folder
+  - if exists C:\projects\gsl echo "Directory was given in cache"
   - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
   - cd ..
   - cd gsl
@@ -79,3 +80,4 @@ cache:
   # container, speed up the appveyor jobs and reduce bandwidth
   # usage on our rackspace account.
   - '%APPDATA%\pip\Cache'
+  - C:\projects\gsl
