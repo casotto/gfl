@@ -30,7 +30,7 @@ install:
   - rmdir C:\\cygwin /s /q
 
   # Install the gls (Gnu Standard Library for windows) in a new folder
-  - if exists gsl echo "Directory was given in cache"
+  #- if exists gsl echo "Directory was given in cache"
   - git clone -q --branch=master https://github.com/casotto/gsl.git C:\projects\gsl
   - cd ..
   - cd gsl
